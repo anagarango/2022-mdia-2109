@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Components</title>
+        <style>
+            body {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <style>
+            #counter {
+                background-color: rgb(238, 115, 141);
+                display: flex;
+            }
+
+            #counter > button {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                background-color: rgb(255, 215, 177);
+                border: none;
+                border-radius: 5px;
+                margin: 5px;
+            }
+
+            #counter > div {
+                flex: 1;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #bar {
+                height: 20px;
+                background-color: aquamarine;
+            }
+            #refresh {
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 60%;
+                left: 50%;
+            }
+        </style>
+        <div id="counter">
+            <button onclick="buttonPlus()">+</button>
+            <div>1</div>
+            <button onclick="buttonMinus()">-</button>
+        </div>
+        <div id="bar"></div>
+        <div id="refresh">
+            <button onclick="location.href=location.href">Refresh Page</button>
+        </div>
+        <script>
+                var num = 1
+                function buttonPlus() {
+                    // console.log("say hello")
+                    // debugger;
+                    // console.log("change hi");
+                    // debugger;
+                    // num = 2
+                    // if (document.getElementById("#buttonPlus".clicked === true){
+                    //     num
+                    // }
+                        if (num < 10){
+                        num = num + 1;
+                        document.querySelector("#counter > div").innerText=num;
+                        document.querySelector("#bar").style.width=(num*10) + "px"
+                        }
+                    }
+                function buttonMinus() {
+                    num = num - 1;
+                    document.querySelector("#counter > div").innerText=num;
+                    document.querySelector("#bar").style.width=(num*10) + "px"
+                }
+        </script>
+    </body>
+</html>
+
+<!-- //wrong to do 
+var num2 = "1"
+num2 = num2 + 1
+//this wont come out as 2 because you are using a string plus a variable so they wont add but just sit right next to eachother
+
+var num2 = 1;
+num2 = num2 + 1
+//this will come out as 2 because they are used in numbers, no strings involved
+//booleans work too
+var num2 = true;
+num2 = num2 + 1 -->
